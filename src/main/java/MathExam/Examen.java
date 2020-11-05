@@ -15,6 +15,9 @@ public class Examen {
     
     int numeroDePreguntas;
     Pregunta[] preguntas;
+    
+    int numeroDeEstudiantes;
+    Estudiante[] estudiantes;
 
     public Examen(int numeroDePreguntas) {
         this.numeroDePreguntas = numeroDePreguntas;

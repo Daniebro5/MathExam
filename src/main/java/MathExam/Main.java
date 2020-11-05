@@ -19,17 +19,20 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
-        Examen examen = new Examen(20);
+        
+        Examen examen = new Examen(2);
         examen.llenarExamen();
         
-        for(Pregunta preg: examen.preguntas) {
-            double respuesta = parseDouble(JOptionPane.showInputDialog(null, preg.enunciado, 0));
-            preg.setRespuestaEstudiante((double)respuesta);
+        Estudiante[] estudiantes;
+        estudiantes = new Estudiante[2];
+        
+        for(Estudiante est: estudiantes) {
+            est = new Estudiante("carlos", examen);
+            System.out.println(est.notaFinal);
         }
         
-        System.out.println(examen.preguntas[0].respuestaCorrecta);
-        System.out.println(examen.preguntas[0].respuestaEstudiante);
-        System.out.println(examen.preguntas[0].isAcertada);
+        
+       
     }
     
 }
