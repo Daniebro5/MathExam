@@ -26,10 +26,17 @@ public class Main {
         Estudiante[] estudiantes;
         estudiantes = new Estudiante[2];
         
+        int promedio = 0;
+        
         for(Estudiante est: estudiantes) {
             est = new Estudiante("carlos", examen);
             System.out.println(est.notaFinal);
+            promedio += est.notaFinal;
         }
+        
+        promedio = promedio / 2;
+        
+        System.out.println(promedio);
         
         
        
