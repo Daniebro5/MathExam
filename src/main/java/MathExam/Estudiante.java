@@ -10,5 +10,5 @@ package MathExam;
  * @author dannibrito
  */
 public class Estudiante {
-    
+    Examen examen;
 }

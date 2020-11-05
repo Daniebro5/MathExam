@@ -15,14 +15,15 @@ public class PreguntaSimple extends Pregunta {
 
     public PreguntaSimple(int operacion) {
         super(operacion);
+        generarPregunta();
     }
     
     @Override
     void generarPregunta(){
         
         Random r = new Random();
-        int numeroA = r.nextInt();
-        int numeroB = r.nextInt();
+        int numeroA = r.nextInt(100);
+        int numeroB = r.nextInt(100);
         
         switch(operacion) {
             case 0:

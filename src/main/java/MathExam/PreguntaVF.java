@@ -15,24 +15,27 @@ public class PreguntaVF extends Pregunta {
 
     public PreguntaVF(int operacion) {
         super(operacion);
+        generarPregunta();
     }
     
     @Override
     void generarPregunta() {
         Random r = new Random();
-        int numeroA = r.nextInt();
-        int numeroB = r.nextInt();
+        int numeroA = r.nextInt(100);
+        int numeroB = r.nextInt(100);
         
-        
+        int respuestaVerdadera;
+        int respuestaFalsa;
         
         int verdadera = r.nextInt(2);
         
         switch(operacion) {
             case 0:
                 // esta es la suma
+                respuestaVerdadera = numeroA + numeroB;
+                respuestaFalsa = respuestaVerdadera + r.nextInt();
                 
                 if(verdadera == 1) {
-                    
                     enunciado = numeroA + " + " + numeroB + " = " + respuestaVerdadera;
                     // 1 significa verdadero en estas preguntas
                     respuestaCorrecta = verdadera;
@@ -46,6 +49,9 @@ public class PreguntaVF extends Pregunta {
                 break;
             case 1:
                 //esta es la resta
+                respuestaVerdadera = numeroA - numeroB;
+                respuestaFalsa = respuestaVerdadera + r.nextInt();
+                
                 if(verdadera == 1) {
                     enunciado = numeroA + " - " + numeroB + " = " + respuestaVerdadera;
                     // 1 significa verdadero en estas preguntas
@@ -58,13 +64,32 @@ public class PreguntaVF extends Pregunta {
                 break;
             case 2:
                 //esta es la multiplicacion
-                enunciado = numeroA + " * " + numeroB + " = ";
-                respuestaCorrecta = numeroA * numeroB;
+                respuestaVerdadera = numeroA * numeroB;
+                respuestaFalsa = respuestaVerdadera + r.nextInt();
+                
+                if(verdadera == 1) {
+                    enunciado = numeroA + " * " + numeroB + " = " + respuestaVerdadera;
+                    // 1 significa verdadero en estas preguntas
+                    respuestaCorrecta = verdadera;
+                } else {
+                    enunciado = numeroA + " * " + numeroB + " = " + respuestaFalsa;
+                    // 1 significa verdadero en estas preguntas
+                    respuestaCorrecta = verdadera;
+                }
                 break;
             case 3:
-                //esta es la division
-                enunciado = numeroA + " / " + numeroB + " = ";
-                respuestaCorrecta = numeroA / numeroB;
+                respuestaVerdadera = numeroA / numeroB;
+                respuestaFalsa = respuestaVerdadera + r.nextInt();
+                
+                if(verdadera == 1) {
+                    enunciado = numeroA + " / " + numeroB + " = " + respuestaVerdadera;
+                    // 1 significa verdadero en estas preguntas
+                    respuestaCorrecta = verdadera;
+                } else {
+                    enunciado = numeroA + " / " + numeroB + " = " + respuestaFalsa;
+                    // 1 significa verdadero en estas preguntas
+                    respuestaCorrecta = verdadera;
+                }
                 break;
             default:
                 break; 

@@ -9,6 +9,16 @@ package MathExam;
  *
  * @author dannibrito
  */
-public class PreguntaMultiple {
+public class PreguntaMultiple extends Pregunta{
+
+    public PreguntaMultiple(int operacion) {
+        super(operacion);
+        generarPregunta();
+    }
+
+    @Override
+    void generarPregunta() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

@@ -11,7 +11,7 @@ import java.util.Random;
  *
  * @author dannibrito
  */
-public class Pregunta {
+public abstract class Pregunta {
     
     int operacion;
     String enunciado;
@@ -22,6 +22,19 @@ public class Pregunta {
     public Pregunta(int operacion) {
         this.operacion = operacion;
     }
+
+    public void setRespuestaEstudiante(double respuestaEstudiante) {
+        this.respuestaEstudiante = respuestaEstudiante;
+        
+        if(respuestaEstudiante == respuestaCorrecta) {
+            isAcertada = true;
+        } else {
+            isAcertada = false;
+        }
+        
+    }
+    
+    
     
     abstract void generarPregunta();
 }
